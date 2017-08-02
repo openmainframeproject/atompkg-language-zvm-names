@@ -10,6 +10,7 @@
   },
   "repository": "https://github.com/openmainframeproject/atompkg-language-zvm-names",
   "license": "Apache 2",
+  "comment": "See NOTICE.md for copyright notices",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },

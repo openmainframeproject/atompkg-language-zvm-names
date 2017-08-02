@@ -1,0 +1,36 @@
+
+# Change summary
+# - Wrote syntax rules based on:
+#   z/VM 6.4 CMS Commands and Utilities Reference, NAMEFIND command, usage note 3
+
+# After editing this file, CTL-SHIFT-F5 or C-S-P window:reload to update the active editor with the revised grammar.
+# editor:log-cursor-scope to see which selectors (example: comment.block.names) the grammar applies at the cursor's location.
+
+'scopeName': 'source.NAMES'
+'name': 'NAMES'
+'fileTypes': ['NAMES','NAMELIST']
+
+'patterns': [
+    { # - Non-data lines: .* or * in column 1, rest of line is a comment
+      'match': '^\\.?\\*.*'
+      'name': 'comment.block.names'
+    },
+    { # - Data lines: [blanks]:tag[ attribute][.[value]]
+      'match': '^\\s*(:)([^ \\.]+)( *[^\\.]*)(\\.)'
+      'captures': {
+        '1': { 'name': 'punctuation.definition.comment.begin.names'},
+        '2': { 'name': 'entity.name.tag.names'},
+        '3': { 'name': 'entity.other.attribute-name.names'},
+        '4': { 'name': 'punctuation.definition.comment.end.names'},
+      }
+    },
+]
+
+'repository': {
+}
+
+# References
+# - https://www.sitepoint.com/how-to-write-a-syntax-highlighting-package-for-atom/
+# - https://manual.macromates.com/en/language_grammars
+# - http://www.regular-expressions.info/characters.html
+# - http://www.apeth.com/nonblog/stories/textmatebundle.html
