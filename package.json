@@ -1,7 +1,7 @@
 {
   "name": "language-zvm-names",
   "main": "./lib/language-zvm-names",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Syntax highlighting for CMS NAMES files, ala the z/VM CMS NAMEFIND command",
   "keywords": [
     "language",
@@ -18,6 +18,5 @@
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
