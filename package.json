@@ -1,15 +1,20 @@
 {
   "name": "language-zvm-names",
   "main": "./lib/language-zvm-names",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Syntax highlighting for CMS NAMES files, ala the z/VM CMS NAMEFIND command",
   "keywords": [
+    "language",
+    "grammar",
+    "z/VM",
+    "syntax"
   ],
   "activationCommands": {
     "atom-workspace": "language-zvm-names:toggle"
   },
   "repository": "https://github.com/openmainframeproject/atompkg-language-zvm-names",
   "license": "Apache 2",
+  "comment": "See NOTICE.md for copyright notices",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
