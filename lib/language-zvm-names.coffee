@@ -10,10 +10,12 @@ module.exports = LanguageZvmNames =
   languageZvmNamesView: null
   modalPanel: null
   subscriptions: null
+  elementHadFocus: null
 
   activate: (state) ->
     @languageZvmNamesView = new LanguageZvmNamesView(state.languageZvmNamesViewState)
     @modalPanel = atom.workspace.addModalPanel(item: @languageZvmNamesView.getElement(), visible: false)
+    @languageZvmNamesView.clickToHide(@modalPanel)
 
     # Events subscribed to in atom's system can be easily cleaned up with a CompositeDisposable
     @subscriptions = new CompositeDisposable
@@ -34,5 +36,8 @@ module.exports = LanguageZvmNames =
 
     if @modalPanel.isVisible()
       @modalPanel.hide()
+      @elementHadFocus?.focus()
     else
       @modalPanel.show()
+      @elementHadFocus = document.activeElement
+      @modalPanel.getItem().focus()  # Needed for clickToHide to work
